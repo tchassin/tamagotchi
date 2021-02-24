@@ -30,6 +30,9 @@ public class TamagotchiMovement : MonoBehaviour
 
     private void ComputeRandomDestination()
     {
+        Debug.Assert(minMovement <= maxMovement, "The minimum movement should be less than or equal to the max movement", this);
+        Debug.Assert(minMovement <= maxDistanceToCenter, "The minimum movement should be less than or equal to the max distance to center", this);
+
         // Compute a point in [min, max] range
         destination = Random.Range(minMovement, maxMovement);
         // Randomly pick left or right
